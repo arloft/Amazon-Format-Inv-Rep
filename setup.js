@@ -37,6 +37,9 @@ function setupInventorySheet() {
   ss.insertColumnAfter(2);
   var cellToReceivePriceFormula = ss.getRange("C2"); // C2 cell addresses updated
   cellToReceivePriceFormula.setValue("=round(sum(((B2*0.005)-B2)*-1),2)"); // B2 cell address updated
+  // ^ LOWER prices by 5%
+  // cellToReceivePriceFormula.setValue("=round(((B2*0.005)+B2),2)"); // B2 cell address updated
+  // ^ RAISE prices by X% (by default, X is 5%)
 }
 
 renameTheSheet();
